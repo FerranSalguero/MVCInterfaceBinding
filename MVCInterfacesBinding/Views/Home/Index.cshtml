@@ -5,13 +5,14 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("Save"))
+@using (Html.BeginForm("Save", "Home"))
 {
     <table>
         @for (int i = 0; i < Model.ItemList.Count; i++)
         {
             <tr>
                 <td>
+                    @Html.HiddenFor(m => m.ItemList[i])
                     @Html.HiddenFor(m => m.ItemList[i].Value)
                     @Html.TextBoxFor(m => m.ItemList[i].Name)
                 </td>
